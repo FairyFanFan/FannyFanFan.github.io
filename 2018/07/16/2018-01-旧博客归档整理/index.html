@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-01-旧博客归档整理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="总结vue-cli会员中心遇到的小问题跨域代理设置// config中的index.js             dev: {    // host: &amp;apos;localhost&amp;apos;, // can be overwritten by process.env.HOST    // 在手机上看    // host:&amp;apos;192.168.2.160&amp;apos;,    env: r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-01-旧博客归档整理">
+<meta property="og:url" content="http://yoursite.com/2018/07/16/2018-01-旧博客归档整理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="总结vue-cli会员中心遇到的小问题跨域代理设置// config中的index.js             dev: {    // host: &amp;apos;localhost&amp;apos;, // can be overwritten by process.env.HOST    // 在手机上看    // host:&amp;apos;192.168.2.160&amp;apos;,    env: r">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-16T07:36:47.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-01-旧博客归档整理">
+<meta name="twitter:description" content="总结vue-cli会员中心遇到的小问题跨域代理设置// config中的index.js             dev: {    // host: &amp;apos;localhost&amp;apos;, // can be overwritten by process.env.HOST    // 在手机上看    // host:&amp;apos;192.168.2.160&amp;apos;,    env: r">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-01-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/16/2018-01-旧博客归档整理/" class="article-date">
+  <time datetime="2018-07-16T07:18:05.000Z" itemprop="datePublished">2018-07-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-01-旧博客归档整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结vue-cli会员中心遇到的小问题"><a href="#总结vue-cli会员中心遇到的小问题" class="headerlink" title="总结vue-cli会员中心遇到的小问题"></a>总结vue-cli会员中心遇到的小问题</h2><h3 id="跨域代理设置"><a href="#跨域代理设置" class="headerlink" title="跨域代理设置"></a>跨域代理设置</h3><pre><code>// config中的index.js            
+dev: {
+   // host: &apos;localhost&apos;, // can be overwritten by process.env.HOST
+   // 在手机上看
+   // host:&apos;192.168.2.160&apos;,
+   env: require(&apos;./dev.env&apos;),//代理
+   port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+   autoOpenBrowser: true,
+   // Paths
+   assetsSubDirectory: &apos;static&apos;,
+   assetsPublicPath: &apos;/&apos;,
+   proxyTable: {
+   &apos;/api&apos;:{
+       target:&quot;http://bd.inofu.com&quot;,//设置你调用的接口域名和端口号 别忘了加http
+       changeOrigin:true,//是否需要跨域
+       pathRewrite:{
+       &apos;^/api&apos;:&apos;&apos;//这里理解成用‘/api&apos;代替target里面的地址，后面组件中我们掉接口时直接用api代替 
+       //       //  比如我要调用&apos;http://40.00.100.133:3002/user/login&apos;，直接写‘/api/user/login&apos;即可
+       }
+   }
+   },
+</code></pre><h3 id="安卓可以显示日历但是ios显示不出来"><a href="#安卓可以显示日历但是ios显示不出来" class="headerlink" title="安卓可以显示日历但是ios显示不出来"></a>安卓可以显示日历但是ios显示不出来</h3><p>时间问题，ios时间格式改写成2017-03-08//加具体时间就是2017-03-08T00:00:00</p>
+<h3 id="缓存keep-alive"><a href="#缓存keep-alive" class="headerlink" title="缓存keep-alive"></a>缓存keep-alive</h3><p>当引入keep-alive的时候，页面第一次进入，钩子的触发顺序created-&gt; mounted-&gt; activated，退出时触发deactivated。当再次进入（前进或者后退）时，只触发activated。</p>
+<h3 id="手机动态码"><a href="#手机动态码" class="headerlink" title="手机动态码"></a>手机动态码</h3><pre><code>//html
+   &lt;div class=&quot;input-div&quot; v-show=&quot;formData.phone&quot;&gt;
+       &lt;input type=&quot;text&quot; class=&quot;input code&quot; name=&quot;code&quot; v-model.trim=&quot;formData.code&quot; placeholder=&quot;验证码&quot;&gt;
+       &lt;button @click=&quot;getCode(formData)&quot; class=&quot;code-btn&quot; :disabled=&quot;!show&quot;&gt;
+           &lt;span v-show=&quot;show&quot;&gt;获取验证码&lt;/span&gt;
+           &lt;span v-show=&quot;!show&quot; class=&quot;count&quot;&gt;{{count}} s&lt;/span&gt;
+       &lt;/button&gt;
+   &lt;/div&gt;
+   // js
+   &lt;script&gt;
+   const TIME_COUNT = 60;
+   data(){
+       return {
+           formData: {
+           phone:&apos;&apos;,
+           code:&apos;&apos;,
+           },
+           show: true,
+           count: &apos;&apos;,
+           timer: null,
+       }
+       },
+
+       methods:{
+           getCode(formData){
+               if (!this.timer) {
+                   this.count = TIME_COUNT;
+                   this.show = false;
+                   this.timer = setInterval(() =&gt; {
+                   if (this.count &gt; 0 &amp;&amp; this.count &lt;= TIME_COUNT) {
+                       this.count--;
+                   } else {
+                       this.show = true;
+                       clearInterval(this.timer);
+                       this.timer = null;
+                   }
+                   }, 1000)
+               }
+           }   
+       }
+   &lt;/script&gt;
+</code></pre><h2 id="z500-win10-集成显卡-亮度调节"><a href="#z500-win10-集成显卡-亮度调节" class="headerlink" title="z500 win10 集成显卡 亮度调节"></a>z500 win10 集成显卡 亮度调节</h2><p>在注册表里面搜索featuretestcontrol，将f000修改为ffff，然后重启 就可以调节亮度了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/16/2018-01-旧博客归档整理/" data-id="cjjo00ok30003l4ve8lox4654" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/16/2017-12-旧博客归档整理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2017-12-旧博客归档整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/16/2017-11-旧博客归档整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2017-11-旧博客归档整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/16/常用SASS/">常用SASS</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/console-log/">过滤console.log</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/flex/">flex</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-04-旧博客归档整理/">2018-04-旧博客归档整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

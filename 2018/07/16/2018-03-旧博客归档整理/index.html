@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-03-旧博客归档整理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CY项目 基础错误！headers[‘x-auth-token’]   mint-ui组件TabItem中的a链接没有给对外接口，要想实现路由跳转，就对TabItem进行二次修改，实现跳转&amp;lt;template&amp;gt;   &amp;lt;a class=&amp;quot;mint-tab-item&amp;quot;       @click=&amp;quot;$parent.$emit(&amp;apos;input&amp;apos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-03-旧博客归档整理">
+<meta property="og:url" content="http://yoursite.com/2018/07/16/2018-03-旧博客归档整理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CY项目 基础错误！headers[‘x-auth-token’]   mint-ui组件TabItem中的a链接没有给对外接口，要想实现路由跳转，就对TabItem进行二次修改，实现跳转&amp;lt;template&amp;gt;   &amp;lt;a class=&amp;quot;mint-tab-item&amp;quot;       @click=&amp;quot;$parent.$emit(&amp;apos;input&amp;apos">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-16T07:45:44.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-03-旧博客归档整理">
+<meta name="twitter:description" content="CY项目 基础错误！headers[‘x-auth-token’]   mint-ui组件TabItem中的a链接没有给对外接口，要想实现路由跳转，就对TabItem进行二次修改，实现跳转&amp;lt;template&amp;gt;   &amp;lt;a class=&amp;quot;mint-tab-item&amp;quot;       @click=&amp;quot;$parent.$emit(&amp;apos;input&amp;apos">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-03-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/16/2018-03-旧博客归档整理/" class="article-date">
+  <time datetime="2018-07-16T07:19:32.000Z" itemprop="datePublished">2018-07-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-03-旧博客归档整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CY项目"><a href="#CY项目" class="headerlink" title="CY项目"></a>CY项目</h2><ul>
+<li>基础错误！headers[‘x-auth-token’]  </li>
+<li>mint-ui<br>组件TabItem中的a链接没有给对外接口，要想实现路由跳转，就对TabItem进行二次修改，实现跳转<pre><code>&lt;template&gt;  
+&lt;a class=&quot;mint-tab-item&quot;  
+    @click=&quot;$parent.$emit(&apos;input&apos;, id)&quot;  
+    :class=&quot;{ &apos;is-selected&apos;: $parent.value === id }&quot;&gt;  
+    &lt;router-link :to=&quot;route&quot;&gt;  
+    &lt;div class=&quot;mint-tab-item-icon&quot;&gt;&lt;slot name=&quot;icon&quot;&gt;&lt;/slot&gt;&lt;/div&gt;  
+    &lt;div class=&quot;mint-tab-item-label&quot;&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;  
+    &lt;/router-link&gt;  
+&lt;/a&gt;  
+&lt;/template&gt;  
+&lt;script&gt;  
+import {  TabItem } from &apos;mint-ui&apos;;  
+export default {  
+name: &apos;mt-tab-item2&apos;,  
+extends:TabItem,  
+props: [&apos;id&apos;,&apos;route&apos;]  
+};  
+&lt;/script&gt;  
+</code></pre>引入并且注册<pre><code>import TabItem2 from &apos;./common/tabItem&apos;; 
+  export default {
+      components: {
+      TabItem2
+      }
+  }
+</code></pre>直接用引入的TabItem2，搞定！<pre><code>&lt;mt-tabbar fixed v-model=&quot;tab_selected&quot;&gt;
+&lt;TabItem2 id=&quot;游戏厅&quot; route=&quot;/gameCenter&quot;&gt;
+  &lt;img slot=&quot;icon&quot; src=&quot;./assets/logo.png&quot;&gt; 游戏厅
+&lt;/TabItem2&gt;
+&lt;TabItem2 id=&quot;奖品城&quot; route=&quot;/prizeCity&quot;&gt;
+  &lt;img slot=&quot;icon&quot; src=&quot;./assets/logo.png&quot;&gt; 奖品城
+&lt;/TabItem2&gt;
+&lt;TabItem2 id=&quot;我的&quot; route=&quot;/mine&quot;&gt;
+  &lt;img slot=&quot;icon&quot; src=&quot;./assets/logo.png&quot;&gt; 我的
+&lt;/TabItem2&gt;
+</code></pre>  </li>
+<li>登录加密 sha1 这个有npm的包<br><a href="https://www.npmjs.com/package/sha1" target="_blank" rel="noopener">https://www.npmjs.com/package/sha1</a></li>
+<li>关于dependencies 和 devdependencies</li>
+<li>axios get请求 content-Type 属性无效 bug 解决<pre><code>var data=&apos;&apos;
+  axios.get(&apos;/api/sms/validationCode/17710000002&apos;, {
+  data: data|| {}
+  })
+  .then(function(response) {
+  console.log(response);
+  })
+  .catch(function(error) {
+  console.log(error);
+  });
+</code></pre></li>
+<li>webpack图片链接打包bug<pre><code>v-bind:src= imgUrl //绑定
+imgUrl: require(&quot;./assets/img/youxiting.png&quot;),
+</code></pre></li>
+<li>vue属性顺序<pre><code>export default {
+      //  组件
+      components: {},
+      //  props
+      props:[],
+      //  数据 
+      data(){},
+      //  计算属性
+      computed:{},
+      //  侦听器
+      watch:{},
+      //  生命周期
+      created(){},
+      //  方法
+      methods:{
+      //   外部引入的方法先声明
+      }
+  }
+</code></pre></li>
+<li>vue fontawesome<br><a href="https://blog.csdn.net/qq_27868533/article/details/79638725" target="_blank" rel="noopener">https://blog.csdn.net/qq_27868533/article/details/79638725</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/16/2018-03-旧博客归档整理/" data-id="cjjo00okb0006l4vexs9hu25f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/16/2018-04-旧博客归档整理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2018-04-旧博客归档整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/16/2018-02-旧博客归档整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2018-02-旧博客归档整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/16/常用SASS/">常用SASS</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/console-log/">过滤console.log</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/flex/">flex</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-04-旧博客归档整理/">2018-04-旧博客归档整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

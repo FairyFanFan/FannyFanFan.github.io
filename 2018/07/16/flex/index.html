@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flex | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Flex弹性布局  (任何元素都能使用弹性布局,行元素设置的是（display :inline-flex）) 第一，让元素横排。 第二，默认横排。 第三，加了flex之后称之为容器，里面子元素叫项目 注意：弹性布局，子元素身上的float 和margin不管用 display: flex; display: -webkit-flex; / 换行(默认不换行) / flex-wrap: wrap;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex">
+<meta property="og:url" content="http://yoursite.com/2018/07/16/flex/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Flex弹性布局  (任何元素都能使用弹性布局,行元素设置的是（display :inline-flex）) 第一，让元素横排。 第二，默认横排。 第三，加了flex之后称之为容器，里面子元素叫项目 注意：弹性布局，子元素身上的float 和margin不管用 display: flex; display: -webkit-flex; / 换行(默认不换行) / flex-wrap: wrap;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-16T08:00:52.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flex">
+<meta name="twitter:description" content="Flex弹性布局  (任何元素都能使用弹性布局,行元素设置的是（display :inline-flex）) 第一，让元素横排。 第二，默认横排。 第三，加了flex之后称之为容器，里面子元素叫项目 注意：弹性布局，子元素身上的float 和margin不管用 display: flex; display: -webkit-flex; / 换行(默认不换行) / flex-wrap: wrap;">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-flex" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/16/flex/" class="article-date">
+  <time datetime="2018-07-16T07:58:21.000Z" itemprop="datePublished">2018-07-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flex
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Flex弹性布局  (任何元素都能使用弹性布局,行元素设置的是（display :inline-flex）)</p>
+<p>第一，让元素横排。</p>
+<p>第二，默认横排。</p>
+<p>第三，加了flex之后称之为容器，里面子元素叫项目</p>
+<p>注意：弹性布局，子元素身上的float 和margin不管用</p>
+<p>display: flex;</p>
+<p>display: -webkit-flex;</p>
+<p>/<em> 换行(默认不换行) </em>/</p>
+<p>flex-wrap: wrap;</p>
+<p>/<em> 对齐方式就是换排列方式 </em>/</p>
+<p>/<em> 主轴对齐方式(X轴对齐方式) </em>/</p>
+<p>justify-content: flex-start;  /<em> 左对齐 </em>/</p>
+<p>justify-content: flex-end;    /<em> 右对齐 </em>/</p>
+<p>justify-content: center;       /<em> 居中 </em>/</p>
+<p>justify-content: space-between;  /<em> 两端对齐 </em>/</p>
+<p>justify-content: space-around;  /<em>  等间距对齐 </em>/</p>
+<p>/<em> （Y轴）多轴交叉对齐方式 </em>/</p>
+<p>/<em> 多于两行的就是多轴 </em>/——对于单轴布局不起任何作用</p>
+<p>align-content: center;      /<em> 居中对齐 </em>/</p>
+<p>align-content: flex-start;  /<em> 上对齐 </em>/</p>
+<p>align-content:  flex-end;   /<em> 下对齐 </em>/</p>
+<p>align-content: space-between;   /<em> 两端对齐 </em>/</p>
+<p>align-content: space-around;  /<em>  等间距对齐 </em>/</p>
+<p>/<em> align-content: stretch; </em>/</p>
+<p>对齐的时候取决于最高的那个元素</p>
+<p>/<em> (Y轴)单轴交叉对齐方式 </em>/——对多轴交叉起作用，但效果不是我们想要的。</p>
+<p>/<em> align-items: flex-start;   </em>/</p>
+<p>/<em> align-items: flex-end;    </em>/</p>
+<p>/<em> align-items: center;    </em>/</p>
+<p>/<em> align-items: stretch;  高度不设置或为auto时，默认占满整个父元素 </em>/</p>
+<p>Baseline第一行文字的底线</p>
+<p>/<em> 主轴方向 </em>/ 类似浮动的功能</p>
+<p>flex-direction: row;  /<em> 从左到右 </em>/</p>
+<p>flex-direction: row-reverse;   /<em> 从右到左 </em>/</p>
+<p>flex-direction: column;    /<em> 从上到下 </em>/</p>
+<p>flex-direction: column-reverse;  /<em> 从下到上 </em>/</p>
+<p>order：1.默认为0；</p>
+<p>2.项目按照order的值进行分组排列（可以调节子元素的位置）</p>
+<p>3.可以为负值</p>
+<p>align-self： 调节单个子元素在其所在这一排的位置。（默认值auto）</p>
+<p>align-self：center /flex-start/ flex-end /</p>
+<p>stretch          元素被拉伸以适应容器。</p>
+<p>flex-shrink：1.默认是1；2.当剩余空间不足时才会缩小。</p>
+<p>flex-grow：1.默认是0；2.不存在空间冲不充足这一说，给其他兄弟元素身上也设好flex-grow值就可操。</p>
+<p>flex-basis：让当前项目按照自己原来的尺寸出现，默认值是auto，或给定具体的值让项目执行。不是所有地方都起作用。</p>
+<p>想让子元素垂直居中：</p>
+<pre><code>display:flex;
+align-items:center;
+justify-content:center;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/16/flex/" data-id="cjjo00okk000al4vejsu2jehd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/16/console-log/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          过滤console.log
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/16/2018-06-旧博客归档整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2018-06-旧博客归档整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/16/常用SASS/">常用SASS</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/console-log/">过滤console.log</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/flex/">flex</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-04-旧博客归档整理/">2018-04-旧博客归档整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
