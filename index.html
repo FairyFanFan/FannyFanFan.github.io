@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-map foreach for" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/23/map foreach for/" class="article-date">
+  <time datetime="2018-07-23T01:52:47.812Z" itemprop="datePublished">2018-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/23/map foreach for/">.map() &gt; .forEach() &gt; for()</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–<a href="https://segmentfault.com/a/1190000007627597" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007627597</a></li>
+<li>forEach 没有返回值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">10</span>,<span class="number">34</span>,<span class="number">57</span>,<span class="number">43</span>,<span class="number">76</span>];  </span><br><span class="line"><span class="keyword">var</span> res = array.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;  </span><br><span class="line">      input[index] = item*<span class="number">10</span>;  </span><br><span class="line">&#125;)  </span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt; undefined;  </span></span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">//--&gt; 通过数组索引改变了原数组； </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res = array.map(<span class="function"><span class="params">v</span>=&gt;</span>&#123;<span class="keyword">return</span> (v)&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/23/map foreach for/" data-id="cjjxmnkwh0001wwvekto8teo4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-常用SASS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/16/常用SASS/" class="article-date">
@@ -686,55 +727,6 @@ dev: {
 
 
   
-    <article id="post-2017-11-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2017-11-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:06:31.834Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2017-11-旧博客归档整理/">2017-11-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="优化H5页面"><a href="#优化H5页面" class="headerlink" title="优化H5页面"></a>优化H5页面</h2><ol>
-<li>图片<br>png&gt;jpg<br>智图处理<br>图片精灵</li>
-<li>js请求</li>
-</ol>
-<h2 id="css文字超出隐藏变省略号"><a href="#css文字超出隐藏变省略号" class="headerlink" title="css文字超出隐藏变省略号"></a>css文字超出隐藏变省略号</h2><pre><code>overflow:hidden; //超出的文本隐藏
-
-text-overflow:ellipsis; //溢出用省略号显示
-
-display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
-
--webkit-box-orient:vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
-
--webkit-line-clamp:2; //这个属性不是css的规范属性，需要组合上面两个属性，表示显示的行数。
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2017-11-旧博客归档整理/" data-id="cjjo00ok50004l4ved5d5r24z" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -769,6 +761,10 @@ display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
       <ul>
         
           <li>
+            <a href="/2018/07/23/map foreach for/">.map() &gt; .forEach() &gt; for()</a>
+          </li>
+        
+          <li>
             <a href="/2018/07/16/常用SASS/">常用SASS</a>
           </li>
         
@@ -782,10 +778,6 @@ display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
         
           <li>
             <a href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/16/2018-04-旧博客归档整理/">2018-04-旧博客归档整理</a>
           </li>
         
       </ul>

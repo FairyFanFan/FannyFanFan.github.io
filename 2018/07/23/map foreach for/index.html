@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>.map() &gt; .forEach() &gt; for() | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–https://segmentfault.com/a/1190000007627597 forEach 没有返回值123456789var array = [10,34,57,4">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".map() &gt; .forEach() &gt; for()">
+<meta property="og:url" content="http://yoursite.com/2018/07/23/map foreach for/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–https://segmentfault.com/a/1190000007627597 forEach 没有返回值123456789var array = [10,34,57,4">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-23T02:03:28.131Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".map() &gt; .forEach() &gt; for()">
+<meta name="twitter:description" content="“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–https://segmentfault.com/a/1190000007627597 forEach 没有返回值123456789var array = [10,34,57,4">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-map foreach for" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/23/map foreach for/" class="article-date">
+  <time datetime="2018-07-23T01:52:47.812Z" itemprop="datePublished">2018-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      .map() &gt; .forEach() &gt; for()
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–<a href="https://segmentfault.com/a/1190000007627597" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007627597</a></li>
+<li>forEach 没有返回值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">10</span>,<span class="number">34</span>,<span class="number">57</span>,<span class="number">43</span>,<span class="number">76</span>];  </span><br><span class="line"><span class="keyword">var</span> res = array.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;  </span><br><span class="line">      input[index] = item*<span class="number">10</span>;  </span><br><span class="line">&#125;)  </span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt; undefined;  </span></span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">//--&gt; 通过数组索引改变了原数组； </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res = array.map(<span class="function"><span class="params">v</span>=&gt;</span>&#123;<span class="keyword">return</span> (v)&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/23/map foreach for/" data-id="cjjxmnkwh0001wwvekto8teo4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/16/常用SASS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">常用SASS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/23/map foreach for/">.map() &gt; .forEach() &gt; for()</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/常用SASS/">常用SASS</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/console-log/">过滤console.log</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/flex/">flex</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
