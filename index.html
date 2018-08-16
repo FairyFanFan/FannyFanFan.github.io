@@ -62,6 +62,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue组件通讯" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/16/vue组件通讯/" class="article-date">
+  <time datetime="2018-08-16T01:39:48.015Z" itemprop="datePublished">2018-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/vue组件通讯/">vue组件通讯</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.cnblogs.com/xulei1992/p/6121974.html" target="_blank" rel="noopener">https://www.cnblogs.com/xulei1992/p/6121974.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/16/vue组件通讯/" data-id="cjkvwf5rh0000a0vebdw72o77" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-map foreach for" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/23/map foreach for/" class="article-date">
@@ -626,107 +665,6 @@ if(winHeight-thisHeight&gt;50){
 
 
   
-    <article id="post-2018-01-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2018-01-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:18:05.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2018-01-旧博客归档整理/">2018-01-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结vue-cli会员中心遇到的小问题"><a href="#总结vue-cli会员中心遇到的小问题" class="headerlink" title="总结vue-cli会员中心遇到的小问题"></a>总结vue-cli会员中心遇到的小问题</h2><h3 id="跨域代理设置"><a href="#跨域代理设置" class="headerlink" title="跨域代理设置"></a>跨域代理设置</h3><pre><code>// config中的index.js            
-dev: {
-   // host: &apos;localhost&apos;, // can be overwritten by process.env.HOST
-   // 在手机上看
-   // host:&apos;192.168.2.160&apos;,
-   env: require(&apos;./dev.env&apos;),//代理
-   port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-   autoOpenBrowser: true,
-   // Paths
-   assetsSubDirectory: &apos;static&apos;,
-   assetsPublicPath: &apos;/&apos;,
-   proxyTable: {
-   &apos;/api&apos;:{
-       target:&quot;http://bd.inofu.com&quot;,//设置你调用的接口域名和端口号 别忘了加http
-       changeOrigin:true,//是否需要跨域
-       pathRewrite:{
-       &apos;^/api&apos;:&apos;&apos;//这里理解成用‘/api&apos;代替target里面的地址，后面组件中我们掉接口时直接用api代替 
-       //       //  比如我要调用&apos;http://40.00.100.133:3002/user/login&apos;，直接写‘/api/user/login&apos;即可
-       }
-   }
-   },
-</code></pre><h3 id="安卓可以显示日历但是ios显示不出来"><a href="#安卓可以显示日历但是ios显示不出来" class="headerlink" title="安卓可以显示日历但是ios显示不出来"></a>安卓可以显示日历但是ios显示不出来</h3><p>时间问题，ios时间格式改写成2017-03-08//加具体时间就是2017-03-08T00:00:00</p>
-<h3 id="缓存keep-alive"><a href="#缓存keep-alive" class="headerlink" title="缓存keep-alive"></a>缓存keep-alive</h3><p>当引入keep-alive的时候，页面第一次进入，钩子的触发顺序created-&gt; mounted-&gt; activated，退出时触发deactivated。当再次进入（前进或者后退）时，只触发activated。</p>
-<h3 id="手机动态码"><a href="#手机动态码" class="headerlink" title="手机动态码"></a>手机动态码</h3><pre><code>//html
-   &lt;div class=&quot;input-div&quot; v-show=&quot;formData.phone&quot;&gt;
-       &lt;input type=&quot;text&quot; class=&quot;input code&quot; name=&quot;code&quot; v-model.trim=&quot;formData.code&quot; placeholder=&quot;验证码&quot;&gt;
-       &lt;button @click=&quot;getCode(formData)&quot; class=&quot;code-btn&quot; :disabled=&quot;!show&quot;&gt;
-           &lt;span v-show=&quot;show&quot;&gt;获取验证码&lt;/span&gt;
-           &lt;span v-show=&quot;!show&quot; class=&quot;count&quot;&gt;{{count}} s&lt;/span&gt;
-       &lt;/button&gt;
-   &lt;/div&gt;
-   // js
-   &lt;script&gt;
-   const TIME_COUNT = 60;
-   data(){
-       return {
-           formData: {
-           phone:&apos;&apos;,
-           code:&apos;&apos;,
-           },
-           show: true,
-           count: &apos;&apos;,
-           timer: null,
-       }
-       },
-
-       methods:{
-           getCode(formData){
-               if (!this.timer) {
-                   this.count = TIME_COUNT;
-                   this.show = false;
-                   this.timer = setInterval(() =&gt; {
-                   if (this.count &gt; 0 &amp;&amp; this.count &lt;= TIME_COUNT) {
-                       this.count--;
-                   } else {
-                       this.show = true;
-                       clearInterval(this.timer);
-                       this.timer = null;
-                   }
-                   }, 1000)
-               }
-           }   
-       }
-   &lt;/script&gt;
-</code></pre><h2 id="z500-win10-集成显卡-亮度调节"><a href="#z500-win10-集成显卡-亮度调节" class="headerlink" title="z500 win10 集成显卡 亮度调节"></a>z500 win10 集成显卡 亮度调节</h2><p>在注册表里面搜索featuretestcontrol，将f000修改为ffff，然后重启 就可以调节亮度了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-01-旧博客归档整理/" data-id="cjjo00ok30003l4ve8lox4654" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -740,15 +678,29 @@ dev: {
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
     </div>
   </div>
 
@@ -759,6 +711,10 @@ dev: {
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/16/vue组件通讯/">vue组件通讯</a>
+          </li>
         
           <li>
             <a href="/2018/07/23/map foreach for/">.map() &gt; .forEach() &gt; for()</a>
@@ -774,10 +730,6 @@ dev: {
         
           <li>
             <a href="/2018/07/16/flex/">flex</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
           </li>
         
       </ul>
