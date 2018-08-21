@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-sass日常" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/21/sass日常/" class="article-date">
+  <time datetime="2018-08-21T06:14:42.686Z" itemprop="datePublished">2018-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/21/sass日常/">sass日常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>scss<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dropdown-width</span>: <span class="number">100px</span>;</span><br><span class="line"><span class="variable">$comp-tip</span>: true;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">mixin</span> tip(<span class="variable">$pos</span>:right) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">mixin</span> dropdown-pos(<span class="variable">$pos</span>:right) &#123;</span><br><span class="line">    &amp;:not(<span class="selector-class">.notip</span>) &#123;</span><br><span class="line">        @<span class="keyword">if</span> <span class="variable">$comp-tip</span> == true&#123;</span><br><span class="line">        @<span class="keyword">if</span> <span class="variable">$pos</span> == right &#123;</span><br><span class="line">            <span class="attribute">top</span>:<span class="variable">$dropdown-width</span> * -<span class="number">0.6</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: <span class="number">#f00</span>;</span><br><span class="line">            @<span class="keyword">include</span> tip(<span class="variable">$pos</span>:<span class="variable">$pos</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-class">.notip</span> &#123;</span><br><span class="line">        @<span class="keyword">if</span> <span class="variable">$pos</span> == right &#123;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">left</span>:<span class="variable">$dropdown-width</span> * <span class="number">0.8</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: <span class="number">#00f</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.someclass</span> &#123; @<span class="keyword">include</span> dropdown-pos(); &#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后css<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.someclass</span><span class="selector-pseudo">:not(.notip)</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.someclass</span><span class="selector-class">.notip</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#00f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/21/sass日常/" data-id="cjl3bmujn00005oveyn6bvmrd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vue组件通讯" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/16/vue组件通讯/" class="article-date">
@@ -618,53 +658,6 @@ imgUrl: require(&quot;./assets/img/youxiting.png&quot;),
 
 
   
-    <article id="post-2017-12-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2017-12-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:18:21.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2017-12-旧博客归档整理/">2017-12-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安卓机软键盘遮挡的问题"><a href="#安卓机软键盘遮挡的问题" class="headerlink" title="安卓机软键盘遮挡的问题"></a>安卓机软键盘遮挡的问题</h2><pre><code>var winHeight = $(window).height(); //获取当前页面高度
-    $(window).resize(function(){
-    varthisHeight=$(this).height();
-if(winHeight-thisHeight&gt;50){
-    //当软键盘弹出，在这里面操作
-    $(&apos;body&apos;).css(&apos;height&apos;,winHeight+&apos;px&apos;);
-}else{
-    //当软键盘收起，在此处操作
-    $(&apos;body&apos;).css(&apos;height&apos;,&apos;100%&apos;);
-    }
-});
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2017-12-旧博客归档整理/" data-id="cjjo00ok20002l4vej09157ft" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -713,6 +706,10 @@ if(winHeight-thisHeight&gt;50){
       <ul>
         
           <li>
+            <a href="/2018/08/21/sass日常/">sass日常</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/16/vue组件通讯/">vue组件通讯</a>
           </li>
         
@@ -726,10 +723,6 @@ if(winHeight-thisHeight&gt;50){
         
           <li>
             <a href="/2018/07/16/console-log/">过滤console.log</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/16/flex/">flex</a>
           </li>
         
       </ul>
