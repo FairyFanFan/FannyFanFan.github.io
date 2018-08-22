@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>.map() &gt; .forEach() &gt; for() | Hexo</title>
+  <title>axios封装依据 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–https://segmentfault.com/a/1190000007627597 forEach 没有返回值123456789var array = [10,34,57,4">
+  <meta name="description" content="123456789101112131415161718test()&amp;#123;    let baseUrl = $config.apiUrlPrefix[$config.env.NODE_ENV];    let axios_ = axios.create(&amp;#123;        baseURL: baseUrl+&apos;/gateway/mobile&apos;, // 因为后台返回图片地址没有/gate">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".map() &gt; .forEach() &gt; for()">
-<meta property="og:url" content="http://yoursite.com/2018/07/23/map foreach for/index.html">
+<meta property="og:title" content="axios封装依据">
+<meta property="og:url" content="http://yoursite.com/2018/08/22/axios封装依据/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–https://segmentfault.com/a/1190000007627597 forEach 没有返回值123456789var array = [10,34,57,4">
+<meta property="og:description" content="123456789101112131415161718test()&amp;#123;    let baseUrl = $config.apiUrlPrefix[$config.env.NODE_ENV];    let axios_ = axios.create(&amp;#123;        baseURL: baseUrl+&apos;/gateway/mobile&apos;, // 因为后台返回图片地址没有/gate">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-23T02:03:28.131Z">
+<meta property="og:updated_time" content="2018-08-22T08:28:52.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".map() &gt; .forEach() &gt; for()">
-<meta name="twitter:description" content="“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–https://segmentfault.com/a/1190000007627597 forEach 没有返回值123456789var array = [10,34,57,4">
+<meta name="twitter:title" content="axios封装依据">
+<meta name="twitter:description" content="123456789101112131415161718test()&amp;#123;    let baseUrl = $config.apiUrlPrefix[$config.env.NODE_ENV];    let axios_ = axios.create(&amp;#123;        baseURL: baseUrl+&apos;/gateway/mobile&apos;, // 因为后台返回图片地址没有/gate">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-map foreach for" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-axios封装依据" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/23/map foreach for/" class="article-date">
-  <time datetime="2018-07-23T01:52:47.812Z" itemprop="datePublished">2018-07-23</time>
+    <a href="/2018/08/22/axios封装依据/" class="article-date">
+  <time datetime="2018-08-22T08:21:14.045Z" itemprop="datePublished">2018-08-22</time>
 </a>
     
   </div>
@@ -78,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      .map() &gt; .forEach() &gt; for()
+      axios封装依据
     </h1>
   
 
@@ -86,37 +87,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–<a href="https://segmentfault.com/a/1190000007627597" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007627597</a></li>
-<li>forEach 没有返回值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">10</span>,<span class="number">34</span>,<span class="number">57</span>,<span class="number">43</span>,<span class="number">76</span>];  </span><br><span class="line"><span class="keyword">var</span> res = array.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;  </span><br><span class="line">      input[index] = item*<span class="number">10</span>;  </span><br><span class="line">&#125;)  </span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt; undefined;  </span></span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">//--&gt; 通过数组索引改变了原数组； </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res = array.map(<span class="function"><span class="params">v</span>=&gt;</span>&#123;<span class="keyword">return</span> (v)&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">test()&#123;</span><br><span class="line">    <span class="keyword">let</span> baseUrl = $config.apiUrlPrefix[$config.env.NODE_ENV];</span><br><span class="line">    <span class="keyword">let</span> axios_ = axios.create(&#123;</span><br><span class="line">        baseURL: baseUrl+<span class="string">'/gateway/mobile'</span>, <span class="comment">// 因为后台返回图片地址没有/gateway/mobile而修改</span></span><br><span class="line">        data:&#123;&#125;,</span><br><span class="line">        headers:&#123;<span class="string">'Content-Type'</span>:<span class="string">'application/json'</span>&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> config = &#123;</span><br><span class="line">        headers:&#123;<span class="string">'x-auth-token'</span>: sessionStorage.getItem(<span class="string">'TOKEN'</span>)&#125;,</span><br><span class="line">            method:<span class="string">"get"</span>,</span><br><span class="line">            params:&#123;&#125;,</span><br><span class="line">            url:<span class="string">"member/idCard/back"</span>,</span><br><span class="line">            responseType: <span class="string">"arraybuffer"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    axios_.request(config).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">&#123; response &#125;</span>) =&gt;</span> &#123;&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/map foreach for/" data-id="cjl4vyhk0000d3cvezzjy3pzs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/axios封装依据/" data-id="cjl4vyhjo00063cvedu7uyjww" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/08/16/vue组件通讯/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          vue组件通讯
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/16/常用SASS/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/08/21/sass日常/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">常用SASS</div>
+      <div class="article-nav-title">sass日常</div>
     </a>
   
 </nav>

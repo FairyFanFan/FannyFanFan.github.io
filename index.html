@@ -62,6 +62,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-axios封装依据" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/22/axios封装依据/" class="article-date">
+  <time datetime="2018-08-22T08:21:14.045Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/22/axios封装依据/">axios封装依据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">test()&#123;</span><br><span class="line">    <span class="keyword">let</span> baseUrl = $config.apiUrlPrefix[$config.env.NODE_ENV];</span><br><span class="line">    <span class="keyword">let</span> axios_ = axios.create(&#123;</span><br><span class="line">        baseURL: baseUrl+<span class="string">'/gateway/mobile'</span>, <span class="comment">// 因为后台返回图片地址没有/gateway/mobile而修改</span></span><br><span class="line">        data:&#123;&#125;,</span><br><span class="line">        headers:&#123;<span class="string">'Content-Type'</span>:<span class="string">'application/json'</span>&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> config = &#123;</span><br><span class="line">        headers:&#123;<span class="string">'x-auth-token'</span>: sessionStorage.getItem(<span class="string">'TOKEN'</span>)&#125;,</span><br><span class="line">            method:<span class="string">"get"</span>,</span><br><span class="line">            params:&#123;&#125;,</span><br><span class="line">            url:<span class="string">"member/idCard/back"</span>,</span><br><span class="line">            responseType: <span class="string">"arraybuffer"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    axios_.request(config).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">&#123; response &#125;</span>) =&gt;</span> &#123;&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/22/axios封装依据/" data-id="cjl4vyhjo00063cvedu7uyjww" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-sass日常" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/21/sass日常/" class="article-date">
@@ -91,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/21/sass日常/" data-id="cjl3bmujn00005oveyn6bvmrd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/21/sass日常/" data-id="cjl4vyhk4000g3cve6diau2j8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -130,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/vue组件通讯/" data-id="cjkvwf5rh0000a0vebdw72o77" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/vue组件通讯/" data-id="cjl4vyhk5000h3cveod1vdb2u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -173,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/map foreach for/" data-id="cjjxmnkwh0001wwvekto8teo4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/map foreach for/" data-id="cjl4vyhk0000d3cvezzjy3pzs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/常用SASS/" data-id="cjjo00okn000bl4ve07itpsby" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/16/常用SASS/" data-id="cjl4vyhk3000f3cvedh65fmzi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/console-log/" data-id="cjjo00oki0009l4veujp3j8wr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/16/console-log/" data-id="cjl4vyhju00093cvevh9yzf20" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +423,7 @@ justify-content:center;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/flex/" data-id="cjjo00okk000al4vejsu2jehd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/16/flex/" data-id="cjl4vyhjx000a3cve90caz5j8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +484,7 @@ console.log([...document.querySelectorAll(&apos;div&apos;)])
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-06-旧博客归档整理/" data-id="cjjo00okh0008l4vesxx39zz9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/16/2018-06-旧博客归档整理/" data-id="cjl4vyhjz000b3cveffrrv6a1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -485,7 +523,7 @@ console.log([...document.querySelectorAll(&apos;div&apos;)])
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-04-旧博客归档整理/" data-id="cjjo00okf0007l4ve0f6iqbo2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/16/2018-04-旧博客归档整理/" data-id="cjl4vyhjp00073cvexnb6rsr1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -595,61 +633,7 @@ imgUrl: require(&quot;./assets/img/youxiting.png&quot;),
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-03-旧博客归档整理/" data-id="cjjo00okb0006l4vexs9hu25f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-02-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2018-02-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:19:22.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2018-02-旧博客归档整理/">2018-02-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><ol>
-<li><p>点击事件：wx.showToast({OBJECT})</p>
-</li>
-<li><p>接入高德地图<a href="https://baijiahao.baidu.com/s?id=1564116914173709&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1564116914173709&amp;wfr=spider&amp;for=pc</a></p>
-</li>
-<li><p>ui——<a href="http://blog.csdn.net/qq_19558705/article/details/60576157" target="_blank" rel="noopener">http://blog.csdn.net/qq_19558705/article/details/60576157</a></p>
-</li>
-<li><p>提示弹框：<a href="http://www.weikeba.cn/article-1003-1.html" target="_blank" rel="noopener">http://www.weikeba.cn/article-1003-1.html</a></p>
-</li>
-<li><p>微信小程序demo: <a href="https://www.cnblogs.com/growingpains/p/7379693.html" target="_blank" rel="noopener">https://www.cnblogs.com/growingpains/p/7379693.html</a></p>
-</li>
-<li><p>生命周期：<a href="http://blog.csdn.net/u014360817/article/details/52650973" target="_blank" rel="noopener">http://blog.csdn.net/u014360817/article/details/52650973</a></p>
-</li>
-<li><p>swipe-item和内部的block都循环，会出现问题。</p>
-</li>
-<li><p>input 问题解决：<a href="https://segmentfault.com/q/1010000008814452" target="_blank" rel="noopener">https://segmentfault.com/q/1010000008814452</a></p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-02-旧博客归档整理/" data-id="cjjo00oka0005l4vexj1tlx94" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/16/2018-03-旧博客归档整理/" data-id="cjl4vyhjm00053cvecq640mca" class="article-share-link">Share</a>
       
       
     </footer>
@@ -707,6 +691,10 @@ imgUrl: require(&quot;./assets/img/youxiting.png&quot;),
       <ul>
         
           <li>
+            <a href="/2018/08/22/axios封装依据/">axios封装依据</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/21/sass日常/">sass日常</a>
           </li>
         
@@ -720,10 +708,6 @@ imgUrl: require(&quot;./assets/img/youxiting.png&quot;),
         
           <li>
             <a href="/2018/07/16/常用SASS/">常用SASS</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/16/console-log/">过滤console.log</a>
           </li>
         
       </ul>
