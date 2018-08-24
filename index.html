@@ -62,6 +62,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-深拷贝" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/24/深拷贝/" class="article-date">
+  <time datetime="2018-08-24T07:14:58.057Z" itemprop="datePublished">2018-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/24/深拷贝/">深拷贝</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>针对引用数据类型<br><a href="https://www.cnblogs.com/echolun/p/7889848.html" target="_blank" rel="noopener">https://www.cnblogs.com/echolun/p/7889848.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/24/深拷贝/" data-id="cjl7nxmmc00006gve3a1io4iq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/22/hexo博客/" class="article-date">
@@ -511,67 +550,6 @@ justify-content:center;
 
 
   
-    <article id="post-2018-06-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2018-06-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:20:11.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2018-06-旧博客归档整理/">2018-06-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="拓展运算符"><a href="#拓展运算符" class="headerlink" title="拓展运算符"></a>拓展运算符</h2><pre><code>const a = [1,2,3];
-
-console.log(...a);  //1 2 3
-
-function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6
-
-const brr = [0,0] ; 
-brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]
-
-const [first, ...rest] = [1, 2, 3, 4, 5];
-first // 1
-rest  // [2, 3, 4, 5] // 如果将扩展运算符用于数组赋值，只能放在参数的最后一位，否则会报错 const [...butLast, last] = [1, 2, 3, 4, 5];// 报错
-const [first, ...middle, last] = [1, 2, 3, 4, 5];// 报错
-
-// 字符串转为真正的数组
-console.log(
-[...&apos;hello&apos;]) 
-// [ &quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot; ]
-
-// 结点操作 
-console.log(document.querySelectorAll(&apos;div&apos;)) 
-// NodeList(2) [div#sidebar, div#content] 
-console.log([...document.querySelectorAll(&apos;div&apos;)]) 
-// (2) [div#sidebar, div#content]
-</code></pre><h3 id="ref-v-if"><a href="#ref-v-if" class="headerlink" title="ref v-if"></a>ref v-if</h3><p>在这个过程中还发现了一个问题，ref 和v-if问题，找不到$ref，渲染先后问题?<br>解决：ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成. 比如在 生命周期 mounted(){} 钩子中调用 或者在 this.$nextTick(()=&gt;{}) 中调用</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-06-旧博客归档整理/" data-id="cjl4vyhjz000b3cveffrrv6a1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -588,7 +566,7 @@ console.log([...document.querySelectorAll(&apos;div&apos;)])
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
     </div>
   </div>
 
@@ -598,7 +576,7 @@ console.log([...document.querySelectorAll(&apos;div&apos;)])
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+      <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
     </div>
   </div>
 
@@ -620,6 +598,10 @@ console.log([...document.querySelectorAll(&apos;div&apos;)])
       <ul>
         
           <li>
+            <a href="/2018/08/24/深拷贝/">深拷贝</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/22/hexo博客/">hexo博客</a>
           </li>
         
@@ -633,10 +615,6 @@ console.log([...document.querySelectorAll(&apos;div&apos;)])
         
           <li>
             <a href="/2018/08/21/sass日常/">sass日常</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/16/vue组件通讯/">vue组件通讯</a>
           </li>
         
       </ul>
