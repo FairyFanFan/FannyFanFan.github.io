@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>2017-10-旧博客归档整理 | Hexo</title>
+  <title>watch监听vuex | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="img和background-image到底该选谁? 是否占位 是否可操作 加载顺序不同  Yahoo前端优化建议服务器，内容，CSS，JS，Cookie，图片，移动应用  服务器1.1 使用内容分发网络 用户与你网站服务器的接近程度会影响响应时间的长短。 把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。1.2 为文件头指定 Expires 或 Cache-Control对于">
+  <meta name="description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-10-旧博客归档整理">
-<meta property="og:url" content="http://yoursite.com/2018/07/16/2017-10-旧博客归档整理/index.html">
+<meta property="og:title" content="watch监听vuex">
+<meta property="og:url" content="http://yoursite.com/2018/08/24/watch监听vuex/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="img和background-image到底该选谁? 是否占位 是否可操作 加载顺序不同  Yahoo前端优化建议服务器，内容，CSS，JS，Cookie，图片，移动应用  服务器1.1 使用内容分发网络 用户与你网站服务器的接近程度会影响响应时间的长短。 把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。1.2 为文件头指定 Expires 或 Cache-Control对于">
+<meta property="og:description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T07:13:24.379Z">
+<meta property="og:updated_time" content="2018-08-24T09:06:40.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017-10-旧博客归档整理">
-<meta name="twitter:description" content="img和background-image到底该选谁? 是否占位 是否可操作 加载顺序不同  Yahoo前端优化建议服务器，内容，CSS，JS，Cookie，图片，移动应用  服务器1.1 使用内容分发网络 用户与你网站服务器的接近程度会影响响应时间的长短。 把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。1.2 为文件头指定 Expires 或 Cache-Control对于">
+<meta name="twitter:title" content="watch监听vuex">
+<meta name="twitter:description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2017-10-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-watch监听vuex" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/16/2017-10-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T06:44:12.457Z" itemprop="datePublished">2018-07-16</time>
+    <a href="/2018/08/24/watch监听vuex/" class="article-date">
+  <time datetime="2018-08-24T09:05:08.872Z" itemprop="datePublished">2018-08-24</time>
 </a>
     
   </div>
@@ -78,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2017-10-旧博客归档整理
+      watch监听vuex
     </h1>
   
 
@@ -86,46 +87,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="img和background-image到底该选谁"><a href="#img和background-image到底该选谁" class="headerlink" title="img和background-image到底该选谁?"></a>img和background-image到底该选谁?</h2><ol>
-<li>是否占位</li>
-<li>是否可操作</li>
-<li>加载顺序不同</li>
-</ol>
-<h2 id="Yahoo前端优化建议"><a href="#Yahoo前端优化建议" class="headerlink" title="Yahoo前端优化建议"></a>Yahoo前端优化建议</h2><p><em>服务器，内容，CSS，JS，Cookie，图片，移动应用</em></p>
-<ol>
-<li>服务器<br>1.1 使用内容分发网络<br> 用户与你网站服务器的接近程度会影响响应时间的长短。<br> 把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。<br>1.2 为文件头指定 Expires 或 Cache-Control<br>对于静态内容：设置文件头过期时间Expires的值为“Never expire”（永不过期）;<br>对于动态内容：使用恰当的Cache-Control文件头来帮助浏览器有条件的请求。<br>1.3 配置ETagEntity tags（ETags）</li>
-<li>CSS<br>2.1 把样式表置于顶部<br>2.2 避免使用 CSS 表达式<br>2.3 使用外部的CSS<br>2.4 精简代码<br>2.5 避免使用滤镜</li>
-<li>JS<br>3.1 把脚本置于页面底部<br>3.2 使用外部 JavaScript 和 CSS<br>3.3 削减 JavaScript 和 CSS 剔除重复脚本<br>3.4 减少DOM访问<br>3.5 开发智能事件处理程序</li>
-<li>COOKIE<br>4.1 减少cookie体积</li>
-<li>图片<br>5.1 优化图片(优化图像和CSS Spirite)<br>5.2 favicon.ico要小且能够缓存</li>
-<li>mobile<br>6.1 保持单个内容小于25K</li>
-</ol>
-
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">    listenshowpage1() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.showpage2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch: &#123;</span><br><span class="line">    listenshowpage1: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改前卫："</span> + a);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改后为："</span> + b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2017-10-旧博客归档整理/" data-id="cjl4vyhj900013cve6xcjomgk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/24/watch监听vuex/" data-id="cjl7ruu3r0000owveaznybe8i" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/07/16/2017-11-旧博客归档整理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          2017-11-旧博客归档整理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/13/keep-alive 生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/08/24/深拷贝/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">keep-alive 生命周期</div>
+      <div class="article-nav-title">深拷贝</div>
     </a>
   
 </nav>
