@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>watch监听vuex | Hexo</title>
+  <title>《你不知道的Javascript》小笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
-<meta name="keywords" content="Vue">
+  <meta name="description" content="Chapter1 作用域   “赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。   ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”; 严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。 在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查">
+<meta name="keywords" content="《你不知道的Javascript》">
 <meta property="og:type" content="article">
-<meta property="og:title" content="watch监听vuex">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/watch监听vuex/index.html">
+<meta property="og:title" content="《你不知道的Javascript》小笔记">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/《你不知道的Javascript》小笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
+<meta property="og:description" content="Chapter1 作用域   “赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。   ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”; 严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。 在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-24T09:30:23.007Z">
+<meta property="og:updated_time" content="2018-08-28T06:47:08.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="watch监听vuex">
-<meta name="twitter:description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
+<meta name="twitter:title" content="《你不知道的Javascript》小笔记">
+<meta name="twitter:description" content="Chapter1 作用域   “赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。   ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”; 严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。 在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-watch监听vuex" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-《你不知道的Javascript》小笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/24/watch监听vuex/" class="article-date">
-  <time datetime="2018-08-24T09:05:08.872Z" itemprop="datePublished">2018-08-24</time>
+    <a href="/2018/08/28/《你不知道的Javascript》小笔记/" class="article-date">
+  <time datetime="2018-08-28T06:37:16.512Z" itemprop="datePublished">2018-08-28</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      watch监听vuex
+      《你不知道的Javascript》小笔记
     </h1>
   
 
@@ -87,19 +87,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">    listenshowpage1() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.showpage2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch: &#123;</span><br><span class="line">    listenshowpage1: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改前卫："</span> + a);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改后为："</span> + b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<!-- computed是在HTML DOM加载后马上执行的，如赋值；
+        <ol>
+<li>Chapter1 作用域</li>
+</ol>
+<ul>
+<li>“赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。  </li>
+<li>ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”;</li>
+<li>严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。</li>
+<li>在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。</li>
+<li>若RHS查询成功，但是你尝试对这个变量的值进行不合理的操作，比如试图对一个非函数类型的值进行函数调用，或着引用 null 或 undefined 类型的值中的属性，那么引擎会抛出另外一种类型的异常 TypeError。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( a + b ); <span class="comment">// 非严格模式，变量b之前并不存在，但是我很热心地帮你创建了一个。</span></span><br><span class="line">    b = a;</span><br><span class="line">&#125;</span><br><span class="line">foo( <span class="number">2</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-而methods则必须要有一定的触发条件才能执行，如点击事件；
-
-watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是对象，包含选项。 -->
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/24/watch监听vuex/" data-id="cjl7ruu3r0000owveaznybe8i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/《你不知道的Javascript》小笔记/" data-id="cjldcmxld0000o0ve9ur9lowf" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
 
     </footer>
   </div>
@@ -107,19 +113,10 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
     
 <nav id="article-nav">
   
-    <a href="/2018/08/28/数组方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          数组方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/08/24/深拷贝/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/08/28/数组方法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">深拷贝</div>
+      <div class="article-nav-title">数组方法</div>
     </a>
   
 </nav>

@@ -62,6 +62,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-《你不知道的Javascript》小笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/28/《你不知道的Javascript》小笔记/" class="article-date">
+  <time datetime="2018-08-28T06:37:16.512Z" itemprop="datePublished">2018-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/28/《你不知道的Javascript》小笔记/">《你不知道的Javascript》小笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Chapter1 作用域</li>
+</ol>
+<ul>
+<li>“赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。  </li>
+<li>ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”;</li>
+<li>严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。</li>
+<li>在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。</li>
+<li>若RHS查询成功，但是你尝试对这个变量的值进行不合理的操作，比如试图对一个非函数类型的值进行函数调用，或着引用 null 或 undefined 类型的值中的属性，那么引擎会抛出另外一种类型的异常 TypeError。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( a + b ); <span class="comment">// 非严格模式，变量b之前并不存在，但是我很热心地帮你创建了一个。</span></span><br><span class="line">    b = a;</span><br><span class="line">&#125;</span><br><span class="line">foo( <span class="number">2</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/28/《你不知道的Javascript》小笔记/" data-id="cjldcmxld0000o0ve9ur9lowf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数组方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/28/数组方法/" class="article-date">
@@ -420,89 +469,6 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
 
 
   
-    <article id="post-常用SASS" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/常用SASS/" class="article-date">
-  <time datetime="2018-07-16T08:04:52.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/常用SASS/">常用SASS</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>不支持&amp;&amp; 但是and可用</li>
-<li><p>父选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  &amp;:hover &#123; text-decoration: underline; &#125;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-class">.firefox</span> &amp; &#123; <span class="attribute">font-weight</span>: normal; &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 编译为</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold; &#125;</span><br><span class="line">  <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: underline; &#125;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-class">.firefox</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>属性嵌套</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.funky</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">20px</span>/<span class="number">24px</span> &#123;</span><br><span class="line">    family: fantasy;</span><br><span class="line">    <span class="attribute">weight</span>: bold;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 编译为</span><br><span class="line"><span class="selector-class">.funky</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">20px</span>/<span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: fantasy;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注释 /<em> </em>/ 与 // (前者会被完整输出到编译后的 CSS 文件中而后者不会)</p>
-</li>
-<li><p>变量</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  $width: 5em !global;</span><br><span class="line">  width: $width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: $width;</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>sassScript字符串</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> firefox-message($selector) &#123;</span><br><span class="line">  body.firefox #&#123;$selector&#125;:before &#123;</span><br><span class="line">    <span class="selector-tag">content</span>: "<span class="selector-tag">Hi</span>, <span class="selector-tag">Firefox</span> <span class="selector-tag">users</span>!";</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">include</span> firefox-message(<span class="string">".header"</span>);</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span><span class="selector-class">.firefox</span> <span class="selector-class">.header</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"Hi, Firefox users!"</span>; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>sassScript运算符</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  font: 10px/8px;             // Plain CSS, no division</span><br><span class="line">  $width: 1000px;</span><br><span class="line">  width: $width/2;            // Uses a variable, does division</span><br><span class="line">  width: round(1.5)/2;        // Uses a function, does division</span><br><span class="line">  height: (500px/2);          // Uses parentheses, does division</span><br><span class="line">  margin-left: 5px + 8px/2px; // Uses +, does division</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">10px</span>/<span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">250px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">9px</span>; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插值语句 #{}</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$name: foo;</span><br><span class="line">$attr: border;</span><br><span class="line">p.#&#123;$name&#125; &#123;</span><br><span class="line">  #&#123;$attr&#125;-color: blue;</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.foo</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: blue; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>嵌套 @import</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.example</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line">然后导入到 <span class="selector-id">#main</span> 样式内</span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  @import "example";</span><br><span class="line">&#125;</span><br><span class="line">将会被编译为</span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-class">.example</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@extend</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="error seriousError"&gt;</span><br><span class="line">  Oh no! You've been hacked!</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">样式如下</span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.seriousError</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 麻烦的是，这样做必须时刻记住使用 .seriousError 时需要参考 .error 的样式，带来了很多不变：智能比如加重维护负担，导致 bug，或者给 HTML 添加无语意的样式。使用 @extend 可以避免上述情况，告诉 Sass 将一个选择器下的所有样式继承给另一个选择器。 */</span></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.seriousError</span> &#123;</span><br><span class="line">  @extend .error;</span><br><span class="line">  <span class="selector-tag">border-width</span>: 3<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@if</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$type: monster;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  @if $type == ocean &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">blue</span>;</span><br><span class="line">  &#125; @<span class="keyword">else</span> if $type == matador &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">red</span>;</span><br><span class="line">  &#125; @<span class="keyword">else</span> if $type == monster &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">green</span>;</span><br><span class="line">  &#125; @<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">black</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@for</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">for</span> $i from <span class="number">1</span> through <span class="number">3</span> &#123;</span><br><span class="line">  .item-#&#123;$i&#125; &#123; width: 2em * $i; &#125;</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2em</span>; &#125;</span><br><span class="line"><span class="selector-class">.item-2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4em</span>; &#125;</span><br><span class="line"><span class="selector-class">.item-3</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6em</span>; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@each</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">each</span> $animal in puma, sea-slug, egret, salamander &#123;</span><br><span class="line">  .#&#123;$animal&#125;-icon &#123;</span><br><span class="line">    background-image: url('/images/#&#123;$animal&#125;.png');</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.puma-icon</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'/images/puma.png'</span>); &#125;</span><br><span class="line"><span class="selector-class">.sea-slug-icon</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'/images/sea-slug.png'</span>); &#125;</span><br><span class="line"><span class="selector-class">.egret-icon</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'/images/egret.png'</span>); &#125;</span><br><span class="line"><span class="selector-class">.salamander-icon</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'/images/salamander.png'</span>); &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@while</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  $i: 6;</span><br><span class="line">@<span class="keyword">while</span> $i &gt; <span class="number">0</span> &#123;</span><br><span class="line">  .item-#&#123;$i&#125; &#123; width: 2em * $i; &#125;</span><br><span class="line">  $i: $i - 2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item-6</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">12em</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-4</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">8em</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4em</span>; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@mixin @include</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  @<span class="keyword">mixin</span> large-text &#123;</span><br><span class="line">  <span class="selector-tag">font</span>: &#123;</span><br><span class="line">    <span class="attribute">family</span>: Arial;</span><br><span class="line">    <span class="attribute">size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">weight</span>: bold;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-id">#ff0000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.page-title</span> &#123;</span><br><span class="line">  @include large-text;</span><br><span class="line">  <span class="selector-tag">padding</span>: 4<span class="selector-tag">px</span>;</span><br><span class="line">  <span class="selector-tag">margin-top</span>: 10<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.page-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">10px</span>; &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参数</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> sexy-border($color, $width) &#123;</span><br><span class="line">  <span class="selector-tag">border</span>: &#123;</span><br><span class="line">    <span class="attribute">color</span>: $color;</span><br><span class="line">    <span class="attribute">width</span>: $width;</span><br><span class="line">    <span class="attribute">style</span>: dashed;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">p &#123; @include sexy-border(blue, 1in); &#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: blue;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">1in</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: dashed; &#125;</span><br><span class="line">@<span class="keyword">mixin</span> colors($text, $background, $border) &#123;</span><br><span class="line">  color: $text;</span><br><span class="line">  background-color: $background;</span><br><span class="line">  border-color: $border;</span><br><span class="line">&#125;</span><br><span class="line">$values: #ff0000, #00ff00, #0000ff;</span><br><span class="line"><span class="selector-class">.primary</span> &#123;</span><br><span class="line">  @include colors($values...);</span><br><span class="line">&#125;</span><br><span class="line">编译为</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.primary</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#00ff00</span>;</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#0000ff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/常用SASS/" data-id="cjl4vyhk3000f3cvedh65fmzi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -519,7 +485,7 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
     </div>
   </div>
 
@@ -529,7 +495,7 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/《你不知道的Javascript》/" style="font-size: 10px;">《你不知道的Javascript》</a>
     </div>
   </div>
 
@@ -551,6 +517,10 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
       <ul>
         
           <li>
+            <a href="/2018/08/28/《你不知道的Javascript》小笔记/">《你不知道的Javascript》小笔记</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/28/数组方法/">数组方法</a>
           </li>
         
@@ -564,10 +534,6 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
         
           <li>
             <a href="/2018/08/22/hexo博客/">hexo博客</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/22/展示数据流图片/">展示数据流图片</a>
           </li>
         
       </ul>
