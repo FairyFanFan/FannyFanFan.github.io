@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Chapter1 作用域   “赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。   ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”; 严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。 在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-28T06:47:08.184Z">
+<meta property="og:updated_time" content="2018-08-28T06:53:01.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《你不知道的Javascript》小笔记">
 <meta name="twitter:description" content="Chapter1 作用域   “赋值操作的目标是谁(LHS)”以及“谁是赋值操作的源头(RHS)”。   ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”; 严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。 在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查">
@@ -95,7 +95,7 @@
 <li>ES5 中引入了“严格模式”。ES6 的模块自动采用严格模式，不管你有没有在模块头部加上”use strict”;</li>
 <li>严格模式在行为上有很多不同,其中一个不同的行为是严格模式禁止自动或隐式地创建全局变量。</li>
 <li>在严格模式中 LHS 查询失败时，并不会创建并返回一个全局变量，引擎会抛出同 RHS 查询失败时类似的 ReferenceError 异常。</li>
-<li>若RHS查询成功，但是你尝试对这个变量的值进行不合理的操作，比如试图对一个非函数类型的值进行函数调用，或着引用 null 或 undefined 类型的值中的属性，那么引擎会抛出另外一种类型的异常 TypeError。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( a + b ); <span class="comment">// 非严格模式，变量b之前并不存在，但是我很热心地帮你创建了一个。</span></span><br><span class="line">    b = a;</span><br><span class="line">&#125;</span><br><span class="line">foo( <span class="number">2</span> );</span><br></pre></td></tr></table></figure>
+<li>若RHS查询成功，但是你尝试对这个变量的值进行不合理的操作，比如试图对一个非函数类型的值进行函数调用，或着引用 null 或 undefined 类型的值中的属性，那么引擎会抛出另外一种类型的异常 TypeError。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( a + b ); <span class="comment">// 非严格模式，变量b之前并不存在，但是我很热心地帮你创建了一个。严格模式 ReferenceError: b is not defined</span></span><br><span class="line">    <span class="built_in">console</span>.log( c()); <span class="comment">// TypeError: c is not a function</span></span><br><span class="line">    b = a; </span><br><span class="line">&#125;</span><br><span class="line">foo( <span class="number">2</span> );</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
