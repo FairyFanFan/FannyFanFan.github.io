@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-24T09:06:40.313Z">
+<meta property="og:updated_time" content="2018-08-24T09:30:23.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="watch监听vuex">
 <meta name="twitter:description" content="12345678910111213data() &amp;#123;    return &amp;#123;&amp;#125;&amp;#125;,computed: &amp;#123;    listenshowpage1() &amp;#123;        return this.$store.state.showpage2;    &amp;#125;&amp;#125;,watch: &amp;#123;    listenshowpage1: fu">
@@ -88,6 +88,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">    listenshowpage1() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.showpage2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch: &#123;</span><br><span class="line">    listenshowpage1: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改前卫："</span> + a);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改后为："</span> + b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<!-- computed是在HTML DOM加载后马上执行的，如赋值；
+
+而methods则必须要有一定的触发条件才能执行，如点击事件；
+
+watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是对象，包含选项。 -->
       
     </div>
     <footer class="article-footer">
@@ -101,6 +106,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/08/28/数组方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数组方法
+        
+      </div>
+    </a>
   
   
     <a href="/2018/08/24/深拷贝/" id="article-nav-older" class="article-nav-link-wrap">
@@ -134,7 +148,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a>
     </div>
   </div>
 
@@ -156,6 +170,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/28/数组方法/">数组方法</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/24/watch监听vuex/">watch监听vuex</a>
           </li>
         
@@ -169,10 +187,6 @@
         
           <li>
             <a href="/2018/08/22/展示数据流图片/">展示数据流图片</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/22/axios封装依据/">axios封装依据</a>
           </li>
         
       </ul>
