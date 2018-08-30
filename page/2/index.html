@@ -62,6 +62,127 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-sass日常" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/21/sass日常/" class="article-date">
+  <time datetime="2018-08-21T06:14:42.686Z" itemprop="datePublished">2018-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/21/sass日常/">sass日常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>scss<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dropdown-width</span>: <span class="number">100px</span>;</span><br><span class="line"><span class="variable">$comp-tip</span>: true;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">mixin</span> tip(<span class="variable">$pos</span>:right) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">mixin</span> dropdown-pos(<span class="variable">$pos</span>:right) &#123;</span><br><span class="line">    &amp;:not(<span class="selector-class">.notip</span>) &#123;</span><br><span class="line">        @<span class="keyword">if</span> <span class="variable">$comp-tip</span> == true&#123;</span><br><span class="line">        @<span class="keyword">if</span> <span class="variable">$pos</span> == right &#123;</span><br><span class="line">            <span class="attribute">top</span>:<span class="variable">$dropdown-width</span> * -<span class="number">0.6</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: <span class="number">#f00</span>;</span><br><span class="line">            @<span class="keyword">include</span> tip(<span class="variable">$pos</span>:<span class="variable">$pos</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-class">.notip</span> &#123;</span><br><span class="line">        @<span class="keyword">if</span> <span class="variable">$pos</span> == right &#123;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">left</span>:<span class="variable">$dropdown-width</span> * <span class="number">0.8</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: <span class="number">#00f</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.someclass</span> &#123; @<span class="keyword">include</span> dropdown-pos(); &#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译后css<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.someclass</span><span class="selector-pseudo">:not(.notip)</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.someclass</span><span class="selector-class">.notip</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#00f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://stackoverflow.com/questions/22650270/sass-not-selector" target="_blank" rel="noopener">https://stackoverflow.com/questions/22650270/sass-not-selector</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/21/sass日常/" data-id="cjl4vyhk4000g3cve6diau2j8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue组件通讯" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/16/vue组件通讯/" class="article-date">
+  <time datetime="2018-08-16T01:39:48.015Z" itemprop="datePublished">2018-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/vue组件通讯/">vue组件通讯</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.cnblogs.com/xulei1992/p/6121974.html" target="_blank" rel="noopener">https://www.cnblogs.com/xulei1992/p/6121974.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/16/vue组件通讯/" data-id="cjl4vyhk5000h3cveod1vdb2u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-map foreach for" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/23/map foreach for/" class="article-date">
+  <time datetime="2018-07-23T01:52:47.812Z" itemprop="datePublished">2018-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/23/map foreach for/">.map() &gt; .forEach() &gt; for()</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>“.map()和.forEach()明显要简短一些，并且他们的可读性更强，同时他们也创建了各自的scope，而for()在执行完遍历之后会把i和l这两个元素挂起来，这让我们需要手动增加一些代码去清除他们所占用的内存。”–<a href="https://segmentfault.com/a/1190000007627597" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007627597</a></li>
+<li>forEach 没有返回值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">10</span>,<span class="number">34</span>,<span class="number">57</span>,<span class="number">43</span>,<span class="number">76</span>];  </span><br><span class="line"><span class="keyword">var</span> res = array.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;  </span><br><span class="line">      input[index] = item*<span class="number">10</span>;  </span><br><span class="line">&#125;)  </span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt; undefined;  </span></span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">//--&gt; 通过数组索引改变了原数组； </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res = array.map(<span class="function"><span class="params">v</span>=&gt;</span>&#123;<span class="keyword">return</span> (v)&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/23/map foreach for/" data-id="cjl4vyhk0000d3cvezzjy3pzs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-常用SASS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/16/常用SASS/" class="article-date">
@@ -538,203 +659,6 @@ imgUrl: require(&quot;./assets/img/youxiting.png&quot;),
 
 
   
-    <article id="post-2017-12-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2017-12-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:18:21.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2017-12-旧博客归档整理/">2017-12-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安卓机软键盘遮挡的问题"><a href="#安卓机软键盘遮挡的问题" class="headerlink" title="安卓机软键盘遮挡的问题"></a>安卓机软键盘遮挡的问题</h2><pre><code>var winHeight = $(window).height(); //获取当前页面高度
-    $(window).resize(function(){
-    varthisHeight=$(this).height();
-if(winHeight-thisHeight&gt;50){
-    //当软键盘弹出，在这里面操作
-    $(&apos;body&apos;).css(&apos;height&apos;,winHeight+&apos;px&apos;);
-}else{
-    //当软键盘收起，在此处操作
-    $(&apos;body&apos;).css(&apos;height&apos;,&apos;100%&apos;);
-    }
-});
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2017-12-旧博客归档整理/" data-id="cjl4vyhj300003cveqvjdrc20" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-01-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2018-01-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:18:05.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2018-01-旧博客归档整理/">2018-01-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结vue-cli会员中心遇到的小问题"><a href="#总结vue-cli会员中心遇到的小问题" class="headerlink" title="总结vue-cli会员中心遇到的小问题"></a>总结vue-cli会员中心遇到的小问题</h2><h3 id="跨域代理设置"><a href="#跨域代理设置" class="headerlink" title="跨域代理设置"></a>跨域代理设置</h3><pre><code>// config中的index.js            
-dev: {
-   // host: &apos;localhost&apos;, // can be overwritten by process.env.HOST
-   // 在手机上看
-   // host:&apos;192.168.2.160&apos;,
-   env: require(&apos;./dev.env&apos;),//代理
-   port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-   autoOpenBrowser: true,
-   // Paths
-   assetsSubDirectory: &apos;static&apos;,
-   assetsPublicPath: &apos;/&apos;,
-   proxyTable: {
-   &apos;/api&apos;:{
-       target:&quot;http://bd.inofu.com&quot;,//设置你调用的接口域名和端口号 别忘了加http
-       changeOrigin:true,//是否需要跨域
-       pathRewrite:{
-       &apos;^/api&apos;:&apos;&apos;//这里理解成用‘/api&apos;代替target里面的地址，后面组件中我们掉接口时直接用api代替 
-       //       //  比如我要调用&apos;http://40.00.100.133:3002/user/login&apos;，直接写‘/api/user/login&apos;即可
-       }
-   }
-   },
-</code></pre><h3 id="安卓可以显示日历但是ios显示不出来"><a href="#安卓可以显示日历但是ios显示不出来" class="headerlink" title="安卓可以显示日历但是ios显示不出来"></a>安卓可以显示日历但是ios显示不出来</h3><p>时间问题，ios时间格式改写成2017-03-08//加具体时间就是2017-03-08T00:00:00</p>
-<h3 id="缓存keep-alive"><a href="#缓存keep-alive" class="headerlink" title="缓存keep-alive"></a>缓存keep-alive</h3><p>当引入keep-alive的时候，页面第一次进入，钩子的触发顺序created-&gt; mounted-&gt; activated，退出时触发deactivated。当再次进入（前进或者后退）时，只触发activated。</p>
-<h3 id="手机动态码"><a href="#手机动态码" class="headerlink" title="手机动态码"></a>手机动态码</h3><pre><code>//html
-   &lt;div class=&quot;input-div&quot; v-show=&quot;formData.phone&quot;&gt;
-       &lt;input type=&quot;text&quot; class=&quot;input code&quot; name=&quot;code&quot; v-model.trim=&quot;formData.code&quot; placeholder=&quot;验证码&quot;&gt;
-       &lt;button @click=&quot;getCode(formData)&quot; class=&quot;code-btn&quot; :disabled=&quot;!show&quot;&gt;
-           &lt;span v-show=&quot;show&quot;&gt;获取验证码&lt;/span&gt;
-           &lt;span v-show=&quot;!show&quot; class=&quot;count&quot;&gt;{{count}} s&lt;/span&gt;
-       &lt;/button&gt;
-   &lt;/div&gt;
-   // js
-   &lt;script&gt;
-   const TIME_COUNT = 60;
-   data(){
-       return {
-           formData: {
-           phone:&apos;&apos;,
-           code:&apos;&apos;,
-           },
-           show: true,
-           count: &apos;&apos;,
-           timer: null,
-       }
-       },
-
-       methods:{
-           getCode(formData){
-               if (!this.timer) {
-                   this.count = TIME_COUNT;
-                   this.show = false;
-                   this.timer = setInterval(() =&gt; {
-                   if (this.count &gt; 0 &amp;&amp; this.count &lt;= TIME_COUNT) {
-                       this.count--;
-                   } else {
-                       this.show = true;
-                       clearInterval(this.timer);
-                       this.timer = null;
-                   }
-                   }, 1000)
-               }
-           }   
-       }
-   &lt;/script&gt;
-</code></pre><h2 id="z500-win10-集成显卡-亮度调节"><a href="#z500-win10-集成显卡-亮度调节" class="headerlink" title="z500 win10 集成显卡 亮度调节"></a>z500 win10 集成显卡 亮度调节</h2><p>在注册表里面搜索featuretestcontrol，将f000修改为ffff，然后重启 就可以调节亮度了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-01-旧博客归档整理/" data-id="cjl4vyhjf00023cver4e1uv3c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-11-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2017-11-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:06:31.834Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/2017-11-旧博客归档整理/">2017-11-旧博客归档整理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="优化H5页面"><a href="#优化H5页面" class="headerlink" title="优化H5页面"></a>优化H5页面</h2><ol>
-<li>图片<br>png&gt;jpg<br>智图处理<br>图片精灵</li>
-<li>js请求</li>
-</ol>
-<h2 id="css文字超出隐藏变省略号"><a href="#css文字超出隐藏变省略号" class="headerlink" title="css文字超出隐藏变省略号"></a>css文字超出隐藏变省略号</h2><pre><code>overflow:hidden; //超出的文本隐藏
-
-text-overflow:ellipsis; //溢出用省略号显示
-
-display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
-
--webkit-box-orient:vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
-
--webkit-line-clamp:2; //这个属性不是css的规范属性，需要组合上面两个属性，表示显示的行数。
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2017-11-旧博客归档整理/" data-id="cjl4vyhjg00033cvedfe374jl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -751,7 +675,7 @@ display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
     </div>
   </div>
 
@@ -761,7 +685,7 @@ display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/《你不知道的Javascript》/" style="font-size: 10px;">《你不知道的Javascript》</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/《你不知道的Javascript》/" style="font-size: 10px;">《你不知道的Javascript》</a>
     </div>
   </div>
 
@@ -783,23 +707,23 @@ display:-webkit-box; //将对象作为弹性伸缩盒子模型显示。
       <ul>
         
           <li>
+            <a href="/2018/08/30/JS小记录/">JS小记录</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/React小记/">React小记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/28/if简写/">if简写</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/28/《你不知道的Javascript》小笔记/">《你不知道的Javascript》小笔记</a>
           </li>
         
           <li>
             <a href="/2018/08/28/数组方法/">数组方法</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/24/watch监听vuex/">watch监听vuex</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/24/深拷贝/">深拷贝</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/22/hexo博客/">hexo博客</a>
           </li>
         
       </ul>
