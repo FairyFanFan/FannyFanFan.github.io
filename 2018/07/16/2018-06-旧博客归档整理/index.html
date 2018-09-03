@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="拓展运算符const a = [1,2,3];  console.log(...a);  //1 2 3  function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6  const brr = [0,0] ;  brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]  const [">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T07:56:57.262Z">
+<meta property="og:updated_time" content="2018-09-03T02:13:53.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018-06-旧博客归档整理">
 <meta name="twitter:description" content="拓展运算符const a = [1,2,3];  console.log(...a);  //1 2 3  function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6  const brr = [0,0] ;  brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]  const [">
@@ -110,7 +110,7 @@ console.log(document.querySelectorAll(&apos;div&apos;))
 // NodeList(2) [div#sidebar, div#content] 
 console.log([...document.querySelectorAll(&apos;div&apos;)]) 
 // (2) [div#sidebar, div#content]
-</code></pre><h3 id="ref-v-if"><a href="#ref-v-if" class="headerlink" title="ref v-if"></a>ref v-if</h3><p>在这个过程中还发现了一个问题，ref 和v-if问题，找不到$ref，渲染先后问题?<br>解决：ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成. 比如在 生命周期 mounted(){} 钩子中调用 或者在 this.$nextTick(()=&gt;{}) 中调用</p>
+</code></pre><h3 id="ref-v-if"><a href="#ref-v-if" class="headerlink" title="ref v-if"></a>ref v-if</h3><p>在这个过程中还发现了一个问题，ref 和v-if问题，找不到$ref，渲染先后问题?<br>解决：ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成. 比如在 生命周期 mounted(){} 钩子中调用 或者在 this.$nextTick(()=&gt;{}) 中调用<br>或是设置一个isMounted开关</p>
 
       
     </div>

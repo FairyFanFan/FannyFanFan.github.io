@@ -441,7 +441,7 @@ console.log(document.querySelectorAll(&apos;div&apos;))
 // NodeList(2) [div#sidebar, div#content] 
 console.log([...document.querySelectorAll(&apos;div&apos;)]) 
 // (2) [div#sidebar, div#content]
-</code></pre><h3 id="ref-v-if"><a href="#ref-v-if" class="headerlink" title="ref v-if"></a>ref v-if</h3><p>在这个过程中还发现了一个问题，ref 和v-if问题，找不到$ref，渲染先后问题?<br>解决：ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成. 比如在 生命周期 mounted(){} 钩子中调用 或者在 this.$nextTick(()=&gt;{}) 中调用</p>
+</code></pre><h3 id="ref-v-if"><a href="#ref-v-if" class="headerlink" title="ref v-if"></a>ref v-if</h3><p>在这个过程中还发现了一个问题，ref 和v-if问题，找不到$ref，渲染先后问题?<br>解决：ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成. 比如在 生命周期 mounted(){} 钩子中调用 或者在 this.$nextTick(()=&gt;{}) 中调用<br>或是设置一个isMounted开关</p>
 
       
     </div>
