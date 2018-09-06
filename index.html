@@ -62,6 +62,160 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/06/CSS/" class="article-date">
+  <time datetime="2018-09-06T08:26:56.200Z" itemprop="datePublished">2018-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/CSS/">CSS日常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>一像素边框<br><a href="https://www.jianshu.com/p/fa670b737a29" target="_blank" rel="noopener">https://www.jianshu.com/p/fa670b737a29</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/06/CSS/" data-id="cjlqbetaj00001svewqd0mkrl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue .sync" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/06/vue .sync/" class="article-date">
+  <time datetime="2018-09-06T08:12:59.138Z" itemprop="datePublished">2018-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/vue .sync/">vue .sync</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>需求：父组件控制子组件可见与否，子组件也可控制父组件可见与否<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"details"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">myComponent</span> <span class="attr">:show</span>=<span class="string">'valueChild'</span> @<span class="attr">close</span>=<span class="string">"close"</span> <span class="attr">style</span>=<span class="string">"padding: 30px 20px 30px 5px;border:1px solid #ddd;margin-bottom: 10px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">myComponent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"changeValue"</span>&gt;</span>toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript">Vue.component(<span class="string">'myComponent'</span>, &#123;</span></span><br><span class="line"><span class="xml">      template: `<span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;<span class="name">p</span>&gt;</span>默认初始值是&#123;&#123;show&#125;&#125;，所以是显示的<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">"closeDiv"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">                 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>`,</span></span><br><span class="line"><span class="javascript">      props:[<span class="string">'show'</span>],</span></span><br><span class="line"><span class="undefined">      methods: &#123;</span></span><br><span class="line"><span class="undefined">        closeDiv() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.$emit(<span class="string">'close'</span>); </span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="undefined">    data()&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="javascript">            valueChild:<span class="literal">true</span>,</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods:&#123;</span></span><br><span class="line"><span class="undefined">        changeValue()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.valueChild = !<span class="keyword">this</span>.valueChild;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        close()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.valueChild = <span class="literal">false</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>改用sync控制<br><code>`</code>html</p>
+<p><template><br>    <div class="details"><br>        <mycomponent :show.sync="valueChild" style="padding: 30px 20px 30px 5px;border:1px solid #ddd;margin-bottom: 10px;"></mycomponent><br>        <button @click="changeValue">toggle</button><br>    </div><br></template></p>
+<script>
+import Vue from 'vue'
+Vue.component('myComponent', {
+      template: `<div v-if="show">
+                    <p>默认初始值是，所以是显示的</p>
+                    <button @click.stop="closeDiv">关闭</button>
+                 </div>`,
+      props:['show'],
+      methods: {
+        closeDiv() {
+          this.$emit('update:show', false); //触发 input 事件，并传入新值
+        }
+      }
+})
+export default{
+    data(){
+        return{
+            valueChild:true,
+        }
+    },
+    methods:{
+        changeValue(){
+            this.valueChild = !this.valueChild
+        }
+    }
+}
+</script>
+
+<p><a href="https://www.jianshu.com/p/6b062af8cf01" target="_blank" rel="noopener">https://www.jianshu.com/p/6b062af8cf01</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/06/vue .sync/" data-id="cjlqbetb400031sveyl7ymmdn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-h5-px-rem" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/05/h5-px-rem/" class="article-date">
+  <time datetime="2018-09-05T02:17:00.317Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/h5-px-rem/">h5-px-rem</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>代码中的px转成rem,再根据设备尺寸调节html的dpr和font-size<br>“px2rem-loader”: “^0.1.9”,<br> “lib-flexible”: “^0.3.2”,<br> // .postcssrc.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">"plugins"</span>: &#123;</span><br><span class="line">    <span class="string">"postcss-import"</span>: &#123;&#125;,</span><br><span class="line">    <span class="string">"autoprefixer"</span>: &#123;&#125;,</span><br><span class="line">    <span class="string">"postcss-pxtorem"</span>:&#123;</span><br><span class="line">      rootValue: <span class="number">75</span>,</span><br><span class="line">      propWhiteList: [],</span><br><span class="line">      <span class="comment">// selectorBlackList:[]    忽略的选择器</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>// main.js</p>
+<pre><code class="JS"><span class="keyword">import</span> <span class="string">'lib-flexible/flexible.js'</span> 
+</code></pre>
+<p> // index.html 的meta标签设置<br> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/05/h5-px-rem/" data-id="cjlqbetau00011sveuirumu1j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS小记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/30/JS小记录/" class="article-date">
@@ -299,9 +453,9 @@
 
 
   
-    <article id="post-watch监听vuex" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-watch" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/24/watch监听vuex/" class="article-date">
+    <a href="/2018/08/24/watch/" class="article-date">
   <time datetime="2018-08-24T09:05:08.872Z" itemprop="datePublished">2018-08-24</time>
 </a>
     
@@ -313,7 +467,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/24/watch监听vuex/">watch监听vuex</a>
+      <a class="article-title" href="/2018/08/24/watch/">watch监听vuex</a>
     </h1>
   
 
@@ -321,16 +475,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">    listenshowpage1() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.showpage2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch: &#123;</span><br><span class="line">    listenshowpage1: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改前卫："</span> + a);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改后为："</span> + b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <ol>
+<li>watch监听vuex<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">    listenshowpage1() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.showpage2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch: &#123;</span><br><span class="line">    listenshowpage1: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改前卫："</span> + a);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"修改后为："</span> + b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <!-- computed是在HTML DOM加载后马上执行的，如赋值；
 
 而methods则必须要有一定的触发条件才能执行，如点击事件；
 
 watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是对象，包含选项。 -->
+<ol start="2">
+<li>watch监听一个对象,深度监听<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    data:&#123;</span><br><span class="line">        a:<span class="number">1</span>,</span><br><span class="line">        b:&#123;</span><br><span class="line">            c:<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    watch:&#123;</span><br><span class="line">        a(val, oldVal)&#123;<span class="comment">//普通的watch监听</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"a: "</span>+val, oldVal);</span><br><span class="line">        &#125;,</span><br><span class="line">        b:&#123;<span class="comment">//深度监听，可监听到对象、数组的变化</span></span><br><span class="line">            handler(val, oldVal)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"b.c: "</span>+val.c, oldVal.c);<span class="comment">//但是这两个值打印出来却都是一样的</span></span><br><span class="line">            &#125;,</span><br><span class="line">            deep:<span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.a=<span class="number">2</span></span><br><span class="line">vm.b.c=<span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/24/watch监听vuex/" data-id="cjl7ruu3r0000owveaznybe8i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/24/watch/" data-id="cjlqbetba00041svedxxtadwc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
@@ -381,122 +542,6 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
 
 
   
-    <article id="post-hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/22/hexo博客/" class="article-date">
-  <time datetime="2018-08-22T08:43:42.570Z" itemprop="datePublished">2018-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/hexo博客/">hexo博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.搭建<br>  <a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">https://www.cnblogs.com/fengxiongZz/p/7707219.html</a><br>2.部署<br>hexo d -g</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/hexo博客/" data-id="cjl4w756l000034veajt4ldst" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-展示数据流图片" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/22/展示数据流图片/" class="article-date">
-  <time datetime="2018-08-22T08:40:56.458Z" itemprop="datePublished">2018-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/展示数据流图片/">展示数据流图片</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.blob转<br>  <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Blob</a><br>2.arraybuffer–&gt;base64<br>  <a href="https://www.e-learn.cn/content/wangluowenzhang/39603" target="_blank" rel="noopener">https://www.e-learn.cn/content/wangluowenzhang/39603</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/展示数据流图片/" data-id="cjl4w5bin0000qcveprnzplyh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-axios封装依据" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/22/axios封装依据/" class="article-date">
-  <time datetime="2018-08-22T08:21:14.045Z" itemprop="datePublished">2018-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/axios封装依据/">axios封装依据</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">test()&#123;</span><br><span class="line">    <span class="keyword">let</span> baseUrl = $config.apiUrlPrefix[$config.env.NODE_ENV];</span><br><span class="line">    <span class="keyword">let</span> axios_ = axios.create(&#123;</span><br><span class="line">        baseURL: baseUrl+<span class="string">'/gateway/mobile'</span>, <span class="comment">// 因为后台返回图片地址没有/gateway/mobile而修改</span></span><br><span class="line">        data:&#123;&#125;,</span><br><span class="line">        headers:&#123;<span class="string">'Content-Type'</span>:<span class="string">'application/json'</span>&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> config = &#123;</span><br><span class="line">        headers:&#123;<span class="string">'x-auth-token'</span>: sessionStorage.getItem(<span class="string">'TOKEN'</span>)&#125;,</span><br><span class="line">            method:<span class="string">"get"</span>,</span><br><span class="line">            params:&#123;&#125;,</span><br><span class="line">            url:<span class="string">"member/idCard/back"</span>,</span><br><span class="line">            responseType: <span class="string">"arraybuffer"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    axios_.request(config).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">&#123; response &#125;</span>) =&gt;</span> &#123;&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/axios封装依据/" data-id="cjl4vyhjo00063cvedu7uyjww" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -513,7 +558,7 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/《你不知道的Javascript》/">《你不知道的Javascript》</a></li></ul>
     </div>
   </div>
 
@@ -523,7 +568,7 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/《你不知道的Javascript》/" style="font-size: 10px;">《你不知道的Javascript》</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/《你不知道的Javascript》/" style="font-size: 10px;">《你不知道的Javascript》</a>
     </div>
   </div>
 
@@ -532,7 +577,7 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
     </div>
   </div>
 
@@ -545,23 +590,23 @@ watch呢？它用于观察Vue实例上的数据变动。对应一个对象，键
       <ul>
         
           <li>
+            <a href="/2018/09/06/CSS/">CSS日常</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/06/vue .sync/">vue .sync</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/05/h5-px-rem/">h5-px-rem</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/30/JS小记录/">ES6越读越薄</a>
           </li>
         
           <li>
             <a href="/2018/08/30/React小记/">React小记</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/28/if简写/">if简写</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/28/《你不知道的Javascript》小笔记/">《你不知道的Javascript》小笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/28/数组方法/">数组方法</a>
           </li>
         
       </ul>

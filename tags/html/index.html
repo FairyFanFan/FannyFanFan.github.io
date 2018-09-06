@@ -3,19 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>2018-06-旧博客归档整理 | Hexo</title>
+  <title>Tag: html | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="拓展运算符const a = [1,2,3];  console.log(...a);  //1 2 3  function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6  const brr = [0,0] ;  brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]  const [">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2018-06-旧博客归档整理">
-<meta property="og:url" content="http://yoursite.com/2018/07/16/2018-06-旧博客归档整理/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/html/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="拓展运算符const a = [1,2,3];  console.log(...a);  //1 2 3  function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6  const brr = [0,0] ;  brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]  const [">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-03T02:13:53.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018-06-旧博客归档整理">
-<meta name="twitter:description" content="拓展运算符const a = [1,2,3];  console.log(...a);  //1 2 3  function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6  const brr = [0,0] ;  brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]  const [">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,85 +60,39 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2018-06-旧博客归档整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/2018-06-旧博客归档整理/" class="article-date">
-  <time datetime="2018-07-16T07:20:11.000Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      2018-06-旧博客归档整理
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/09/05/h5-px-rem/" class="archive-article-date">
+  <time datetime="2018-09-05T02:17:00.317Z" itemprop="datePublished">Sep 5</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/09/05/h5-px-rem/">h5-px-rem</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="拓展运算符"><a href="#拓展运算符" class="headerlink" title="拓展运算符"></a>拓展运算符</h2><pre><code>const a = [1,2,3];
-
-console.log(...a);  //1 2 3
-
-function add(x,y,z){return x+y+z;};console.log(add(...a)); // 6
-
-const brr = [0,0] ; 
-brr.push(...a);console.log(brr); // [0, 0, 1, 2, 3]
-
-const [first, ...rest] = [1, 2, 3, 4, 5];
-first // 1
-rest  // [2, 3, 4, 5] // 如果将扩展运算符用于数组赋值，只能放在参数的最后一位，否则会报错 const [...butLast, last] = [1, 2, 3, 4, 5];// 报错
-const [first, ...middle, last] = [1, 2, 3, 4, 5];// 报错
-
-// 字符串转为真正的数组
-console.log(
-[...&apos;hello&apos;]) 
-// [ &quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot; ]
-
-// 结点操作 
-console.log(document.querySelectorAll(&apos;div&apos;)) 
-// NodeList(2) [div#sidebar, div#content] 
-console.log([...document.querySelectorAll(&apos;div&apos;)]) 
-// (2) [div#sidebar, div#content]
-</code></pre><h3 id="ref-v-if"><a href="#ref-v-if" class="headerlink" title="ref v-if"></a>ref v-if</h3><p>在这个过程中还发现了一个问题，ref 和v-if问题，找不到$ref，渲染先后问题?<br>解决：ref 需要在dom渲染完成后才会有,在使用的时候确保dom已经渲染完成. 比如在 生命周期 mounted(){} 钩子中调用 或者在 this.$nextTick(()=&gt;{}) 中调用<br>或是设置一个isMounted开关</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/16/2018-06-旧博客归档整理/" data-id="cjl4vyhjz000b3cveffrrv6a1" class="article-share-link">Share</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/07/16/flex/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          flex
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/07/16/2018-04-旧博客归档整理/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">2018-04-旧博客归档整理</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 </section>
         
